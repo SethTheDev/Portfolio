@@ -52,7 +52,7 @@ export default function Home() {
         <h1 className="text-4xl text-center">Unsure? Here&apos;s a few vouches!</h1>
         <div className="reviews-container justify-center flex flex-row flex-wrap gap-10">
             <Review name="Nitlix" avatar="https://avatars.githubusercontent.com/u/66027553?v=4" description="i love python because he helped me calculate areas of circles" />
-            <Review name="Mopi" avatar="https://avatars.githubusercontent.com/u/95306417?v=4" description="(no review yet)" />
+            <Review name="Mopi" avatar="https://avatars.githubusercontent.com/u/95306417?v=4" description="Talented developer and very very good friend :3" />
             <Review name="Refactoring" avatar="https://avatars.githubusercontent.com/u/143757135?v=4" description="I like balls but I like python better" />
             <Review name="BigC" avatar="https://cdn.discordapp.com/avatars/1026351894580445208/b712a79cb334c7dcff500ee0c732977f" description="Seth is a great coder who has been helping me make a mod for minecraft with Python script. (and he is my pookie bear forever)" />
             <Review name="Spectra" avatar="https://cdn.discordapp.com/avatars/1179720806784323584/a_18124be850c272740385f8b0a8e49ee0.gif" description="very smart and sexy" />
