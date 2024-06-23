@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+.loading {
+  background: linear-gradient(#21bdcb, #9e1ac6);
+  background-clip: text;
+  color: transparent;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.welcome {
+  width: fit-content;
+  margin: 15% auto;
+}
+
+.hello {
+  font-size: 72px;
+  padding-bottom: 4px;
+}
+
+i.skibidi {
+  font-style: normal;
+  background: linear-gradient(135deg, rgb(32, 73, 222) 30%, rgb(242, 35, 135) 70%);
+  background-clip: text;
+  color: transparent;
+}
+
+.info {
+  font-size: 16px;
+}
+
+.terminal {
+  background-color: #141414;
+  border-radius: 30px;
+  padding: 20px;
+  min-width: 30%;
+  margin: 0;
+}
+
+.languages {
+  padding-top: 10%;
+  width: 100%;
+}
+
+.conveyor-container {
+  overflow: hidden;
+  position: relative;
+  height: 500px;
+}
+
+.languages-box {
+  display: flex;
+  left: 0;
+  top: 0;
+  position: absolute;
+  animation: conveyor-animation 5s alternate infinite;
+}
+
+.languages-heading {
+  font-size: 48px;
+}
+
+.language {
+  background-color: #111111;
+  border-radius: 15px;
+  width: 280px;
+  margin: 20px 2%;
+
+  flex: 0 0 auto;
+  padding: 10px;
+  line-height: 40px;
+  min-width: 100px;
+}
+
+.socials {
+  padding-top: 10%;
+}
+
+.social {
+  background-size: cover;
+  background-color: white;
+  border-radius: 25px;
+  margin-top: 20px;
+  margin-right: 20px;
+  height: 60px;
+  cursor: pointer;
+  max-width: 60px;
+}
+
+.discord {
+  background-image: url('/img/social/discord.png');
+  background-color: transparent;
+}
+
+.github {
+  background-image: url('/img/social/github.png')
+}
+
+.username {
+  margin-left: 70px;
+}
+
+.review {
+  background-color: #141414;
+  padding: 20px;
+  border-radius: 20px;
+  min-width: 300px;
+  width: 30%;
+  min-height: 200px;
+  height: max-content;
+}
+
+.reviews-container {
+  margin-top: 100px;
+}
+
+.avatar {
+  border-radius: 50%;
+}
+
+.project {
+  background-color: #141414;
+  border-radius: 15px;
+  min-width: 275px;
+  max-width: 275px;
+  height: 350px;
+}
+
+@keyframes conveyor-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-105rem);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
