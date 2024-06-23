@@ -12,13 +12,6 @@ export function Info({ text, speed }: InfoParams) {
     const [index, setIndex] = useState(0);
     const ref = useRef<HTMLParagraphElement>(null)
 
-    const onLeave = () => {
-        const element = ref.current
-        if(element) {
-            element.innerHTML = element.innerHTML.slice(0, element.innerHTML.length - 18)
-        }
-    }
-
     useEffect(() => {
         if (index < text.length) {
             const timeout = setTimeout(() => {
@@ -30,7 +23,7 @@ export function Info({ text, speed }: InfoParams) {
     }, [index, text, speed, displayedText]);
 
     return (
-        <p className="info" ref={ref} onMouseLeave={onLeave}>
+        <p className="info" ref={ref}>
             {displayedText}
         </p>
     )
