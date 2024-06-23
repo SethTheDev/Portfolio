@@ -12,18 +12,6 @@ export function Info({ text, speed }: InfoParams) {
     const [index, setIndex] = useState(0);
     const ref = useRef<HTMLParagraphElement>(null)
 
-    const onHover = () => {
-        const element = ref.current
-        if(element) {
-            console.log(`${index} : ${text.length}`)
-            if(index >= displayedText.length) {
-                if(!element.innerHTML.endsWith('>')) {
-                    element.innerHTML += ' <i>(possibly)</i>'
-                }
-            }
-        }
-    }
-
     const onLeave = () => {
         const element = ref.current
         if(element) {
@@ -42,7 +30,7 @@ export function Info({ text, speed }: InfoParams) {
     }, [index, text, speed, displayedText]);
 
     return (
-        <p className="info" ref={ref} onMouseOver={onHover} onMouseLeave={onLeave}>
+        <p className="info" ref={ref} onMouseLeave={onLeave}>
             {displayedText}
         </p>
     )
