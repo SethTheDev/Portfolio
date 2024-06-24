@@ -11,7 +11,7 @@ export function Terminal() {
     return (
         <div className={`terminal ${nunito.className}`}>
             <div className={`${nunitoTitle.className} flex flex-row items-center justify-between`}>
-                <strong className="flex-grow text-center">kitty - usr/bin/zsh</strong>
+                <strong className="flex-grow text-center">kitty - /usr/bin/zsh</strong>
                 <strong><i className="not-italic text-lime-400">&#95;</i> <i className="not-italic text-yellow-500">&#x25A2;</i> <i className="not-italic text-rose-700">&times;</i></strong>
             </div>
             <div className="flex flex-row flex-wrap">
@@ -32,6 +32,10 @@ export function Terminal() {
                         .deleteAll()
                         .typeString('bun run dev')
                         .pauseFor(1)
+                        .deleteAll()
+                        .typeString('neofetch')
+                        .pauseFor(1.25)
+                        .deleteAll()
                         .start()
                 }}
                 options={{
