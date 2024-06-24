@@ -6,8 +6,10 @@ import { Social } from "./components/social";
 import { Terminal } from "./components/terminal";
 import { Review } from "./components/review";
 import { Project } from "./components/project";
+import { Heart } from "./components/heart";
 import React, { useEffect, useState } from "react";
 import { Dancing_Script } from "next/font/google";
+import Image from "next/image"
 
 const dancingscript = Dancing_Script({ weight: "700", subsets: ["latin"] })
 
@@ -23,18 +25,18 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col justify-between p-12">
       <div className="flex flex-row flex-wrap items-center justify-center gap-20">
-        <div className="welcome">
-          <h1 className="hello">Hey there! I&apos;m <i className={`${dancingscript.className} skibidi`}>Seth</i></h1>
+        <div className="w-fit mx-auto my-52">
+          <h1 className="text-7xl pb-1">Hey there! I&apos;m <i className={`${dancingscript.className} skibidi`}>Seth</i></h1>
           <Info text={"Professional Fullstack Developer with 4+ years of experience!"} speed={30}></Info>
         </div>
         <Terminal />
       </div>
-      <div className="languages text-center">
+      <div className="pt-44 text-center">
         <div className="flex flex-row flex-wrap items-center justify-center m-0 p-0">
-          <h1 className="languages-heading text-center">My loadout</h1>
+          <h1 className="text-5xl text-center">My loadout</h1>
         </div>
-        <div className="conveyor-container">
-          <div className="languages-box">
+        <div className="overflow-hidden relative h-128">
+          <div className="languages-box flex left-0 top-0 absolute">
             {
             languages.map(lang => 
               <Language key={lang[0].toLowerCase()} name={lang[0]} img={lang[1]} yrs={lang[2]}></Language>
@@ -78,8 +80,11 @@ export default function Home() {
         <Social name="github" url="https://github.com/SethTheDev" username="SethTheDev" />
       </div>
       <div className="text-center mt-10">
-        <h6 className="text-xs">Made with <strong className="text-sky-400">&#9829;</strong> by ThePython</h6>
+        <h6 className="text-xs">Made with <Heart/>  by ThePython</h6>
         <h6 className="text-xs">© 2024 SethTheDev | All Rights Reserved</h6>
+      </div>
+      <div className="heart opacity-0 scale-50 fixed place-self-center">
+        <Image alt="heart" src="/img/heart.svg" width={460} height={460}></Image>
       </div>
     </main>
   );

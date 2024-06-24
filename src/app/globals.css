@@ -41,16 +41,6 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.welcome {
-  width: fit-content;
-  margin: 15% auto;
-}
-
-.hello {
-  font-size: 72px;
-  padding-bottom: 4px;
-}
-
 i.skibidi {
   font-style: normal;
   background: linear-gradient(135deg, rgb(32, 73, 222) 30%, rgb(242, 35, 135) 70%);
@@ -58,39 +48,12 @@ i.skibidi {
   color: transparent;
 }
 
-.info {
-  font-size: 16px;
-}
-
 .terminal {
   background-color: #141414;
-  border-radius: 30px;
-  padding: 20px;
-  min-width: 30%;
-  margin: 0;
-}
-
-.languages {
-  padding-top: 10%;
-  width: 100%;
-}
-
-.conveyor-container {
-  overflow: hidden;
-  position: relative;
-  height: 500px;
 }
 
 .languages-box {
-  display: flex;
-  left: 0;
-  top: 0;
-  position: absolute;
   animation: conveyor-animation 5s alternate infinite;
-}
-
-.languages-heading {
-  font-size: 48px;
 }
 
 .language {

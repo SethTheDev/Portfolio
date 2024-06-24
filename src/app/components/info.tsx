@@ -23,7 +23,7 @@ export function Info({ text, speed }: InfoParams) {
     }, [index, text, speed, displayedText]);
 
     return (
-        <p className="info" ref={ref}>
+        <p className="text-base" ref={ref}>
             {displayedText}
         </p>
     )
