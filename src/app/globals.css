@@ -122,6 +122,10 @@ i.skibidi {
   height: 350px;
 }
 
+.heart {
+  visibility: hidden;
+}
+
 @keyframes conveyor-animation {
   0% {
     transform: translateX(0);

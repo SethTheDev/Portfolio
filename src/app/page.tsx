@@ -2,11 +2,11 @@
 
 import { Info } from "./components/info";
 import { Language } from "./components/language";
-import { Social } from "./components/social";
 import { Terminal } from "./components/terminal";
 import { Review } from "./components/review";
 import { Project } from "./components/project";
 import { Heart } from "./components/heart";
+import { Social } from "./components/social"
 import React, { useEffect, useState } from "react";
 import { Dancing_Script } from "next/font/google";
 import Image from "next/image"
@@ -76,8 +76,9 @@ export default function Home() {
 
       <div className="socials">
         <h1 className="text-4xl">Interested? Find me on one of these platforms</h1>
-        <Social name="discord" url="https://discord.com/users/866510980225040466" username="the_python" />
-        <Social name="github" url="https://github.com/SethTheDev" username="SethTheDev" />
+        <div className="flex flex-row flex-wrap items-center">
+
+        </div>
       </div>
       <div className="text-center mt-10">
         <h6 className="text-xs">Made with <Heart/>  by ThePython</h6>
