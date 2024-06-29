@@ -72,30 +72,6 @@ i.skibidi {
   padding-top: 10%;
 }
 
-.social {
-  background-size: cover;
-  background-color: white;
-  border-radius: 25px;
-  margin-top: 20px;
-  margin-right: 20px;
-  height: 60px;
-  cursor: pointer;
-  max-width: 60px;
-}
-
-.discord {
-  background-image: url('/img/social/discord.png');
-  background-color: transparent;
-}
-
-.github {
-  background-image: url('/img/social/github.png')
-}
-
-.username {
-  margin-left: 70px;
-}
-
 .review {
   background-color: #141414;
   padding: 20px;
@@ -114,12 +90,12 @@ i.skibidi {
   border-radius: 50%;
 }
 
-.project {
+.social {
   background-color: #141414;
-  border-radius: 15px;
-  min-width: 275px;
-  max-width: 275px;
-  height: 350px;
+  min-width: 20rem;
+  border-radius: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .heart {

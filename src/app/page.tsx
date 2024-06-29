@@ -75,9 +75,10 @@ export default function Home() {
       */}
 
       <div className="socials">
-        <h1 className="text-4xl">Interested? Find me on one of these platforms</h1>
-        <div className="flex flex-row flex-wrap items-center">
-
+        <h1 className="text-5xl text-center">Want to get in touch?</h1>
+        <div className="flex flex-row flex-wrap items-center justify-center mt-20 gap-10">
+          <Social platform="Github" username="SethTheDev" url="https://github.com/SethTheDev"></Social>
+          <Social platform="Discord" username="the_python" url="https://discord.com/users/866510980225040466"></Social>
         </div>
       </div>
       <div className="text-center mt-10">
