@@ -30,7 +30,7 @@ export function Review({ avatar, name, description }: ReviewParams) {
          ref={ref}
          className="review" 
          whileHover={{
-            scale: 1.2,
+            scale: 1.1,
             rotate: 10,
             backgroundColor: '#212121'
          }}
