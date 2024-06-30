@@ -26,12 +26,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.loading {
-  background: linear-gradient(#21bdcb, #9e1ac6);
-  background-clip: text;
-  color: transparent;
-}
-
 .center {
   margin: 0;
   position: absolute;
