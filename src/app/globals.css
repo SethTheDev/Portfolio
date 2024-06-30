@@ -46,15 +46,11 @@ i.skibidi {
   background-color: #141414;
 }
 
-.languages-box {
-  animation: conveyor-animation 5s alternate infinite;
-}
-
 .language {
   background-color: #111111;
   border-radius: 15px;
   width: 280px;
-  margin: 20px 2%;
+  margin: 20px 10px;
 
   flex: 0 0 auto;
   padding: 10px;

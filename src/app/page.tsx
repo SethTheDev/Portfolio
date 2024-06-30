@@ -11,6 +11,7 @@ import React, { useEffect, useState } from "react";
 import { Dancing_Script } from "next/font/google";
 import Image from "next/image"
 import LoadingScreen from "./loading";
+import Marquee from "react-fast-marquee"
 
 const dancingscript = Dancing_Script({ weight: "700", subsets: ["latin"] })
 
@@ -28,11 +29,11 @@ export default function Home() {
   })
 
   const languages = [
-    ["Java", "/img/lang/java.png", "4 yrs"],
-    ["Python", "/img/lang/python.png", "4.5 yrs"],
-    ["Javascript", "/img/lang/javascript.png", "4 yrs"],
-    ["Typescript", "/img/lang/typescript.png", "3 yrs"],
-    ["HTML/CSS", "/img/lang/htmlcss.png", "3 yrs"],
+    ["Java", "/img/lang/java.png"],
+    ["Python", "/img/lang/python.png"],
+    ["Javascript", "/img/lang/javascript.png"],
+    ["Typescript", "/img/lang/typescript.png"],
+    ["HTML/CSS", "/img/lang/htmlcss.png"],
   ]
 
   return (
@@ -46,31 +47,26 @@ export default function Home() {
           </div>
           <Terminal />
         </div>
-        <div className="pt-44 text-center">
+        <div className="pt-44 text-center cursor-default">
           <div className="flex flex-row flex-wrap items-center justify-center m-0 p-0">
             <h1 className="text-5xl text-center">My loadout</h1>
           </div>
-          <div className="overflow-hidden relative h-128">
-            <div className="languages-box flex left-0 top-0 absolute">
-              {
+          <Marquee
+          speed={150}
+          >
+            {
               languages.map(lang => 
-                <Language key={lang[0].toLowerCase()} name={lang[0]} img={lang[1]} yrs={lang[2]}></Language>
+                <Language key={lang[0].toLowerCase()} name={lang[0]} img={lang[1]}></Language>
               )
-              }
-              {
-              languages.map(lang => 
-                <Language key={lang[0].toLowerCase()} name={lang[0]} img={lang[1]} yrs={lang[2]}></Language>
-              )
-              }
-            </div>
-          </div>
+            }
+          </Marquee>
         </div>
-        <div className="reviews pt-20">
+        <div className="reviews pt-20 cursor-default">
           <h1 className="text-4xl text-center">Unsure? Here&apos;s a few vouches!</h1>
           <div className="reviews-container justify-center flex flex-row flex-wrap gap-12">
               <Review name="Nitlix" avatar="https://avatars.githubusercontent.com/u/66027553?v=4" description="i love python because he helped me calculate areas of circles" />
               <Review name="Mopi" avatar="https://avatars.githubusercontent.com/u/95306417?v=4" description="Talented developer and very very good friend :3" />
-              <Review name="Refactoring" avatar="https://avatars.githubusercontent.com/u/143757135?v=4" description="I like balls but I like python better" />
+              <Review name="Refactoring" avatar="https://avatars.githubusercontent.com/u/143757135?v=4" description="One of my best developers. Major vouch" />
               <Review name="BigC" avatar="https://cdn.discordapp.com/avatars/1026351894580445208/b712a79cb334c7dcff500ee0c732977f" description="Seth is a great coder who has been helping me make a mod for minecraft with Python script. (and he is my pookie bear forever)" />
               <Review name="Spectra" avatar="https://cdn.discordapp.com/avatars/1179720806784323584/a_18124be850c272740385f8b0a8e49ee0.gif" description="very smart and sexy" />
               <Review name="Kars" avatar="https://cdn.discordapp.com/avatars/718424168068284516/a_ef7371f116afd2d15116e08561c43c28.gif" description="Very tallented developer, only 50% a femboy, would highly reccomend!" />
@@ -90,7 +86,7 @@ export default function Home() {
         */}
 
         <div className="socials">
-          <h1 className="text-5xl text-center">Want to get in touch?</h1>
+          <h1 className="text-5xl text-center cursor-default">Want to get in touch?</h1>
           <div className="flex flex-row flex-wrap items-center justify-center mt-20 gap-10">
             <Social platform="Github" username="SethTheDev" url="https://github.com/SethTheDev"></Social>
             <Social platform="Discord" username="the_python" url="https://discord.com/users/866510980225040466"></Social>

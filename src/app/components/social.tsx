@@ -31,7 +31,7 @@ export function Social({ platform, username, url } : SocialParams) {
             width={64}
             height={64}
             ></Image>
-            <h1 className={`text-3xl pl-5 pt-4 ${title.className}`}>{platform}</h1>
+            <h1 className={`text-3xl pl-5 pt-4 ${title.className}`}>{username}</h1>
         </motion.div>
     )
 }

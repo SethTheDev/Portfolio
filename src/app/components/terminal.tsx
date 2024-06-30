@@ -10,7 +10,7 @@ const nunitoTitle = Nunito({ weight: "800", subsets: ["latin"] })
 export function Terminal() {
     return (
         <div className={`terminal rounded-3xl p-5 min-w-100 m-0 ${nunito.className}`}>
-            <div className={`${nunitoTitle.className} flex flex-row items-center justify-between`}>
+            <div className={`${nunitoTitle.className} flex flex-row items-center justify-between cursor-default`}>
                 <strong className="flex-grow text-center">kitty - /usr/bin/zsh</strong>
                 <strong><i className="not-italic text-lime-400">&#95;</i> <i className="not-italic text-yellow-500">&#x25A2;</i> <i className="not-italic text-rose-700">&times;</i></strong>
             </div>

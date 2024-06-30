@@ -1,40 +1,27 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useRef } from "react"
-import { animate } from "motion"
+import { motion } from "framer-motion"
 
 interface LanguageParams {
     name: string,
-    img: string,
-    yrs: string
+    img: string
 }
 
-export function Language({ name, img, yrs }: LanguageParams) {
-    const ref = useRef<HTMLDivElement>(null)
-
-    useEffect(() => {
-        const element = ref.current
-
-        const handleMouseEnter = () => {
-            animate(element as Element, { skewY: -5, scale: 0.8, animationPlayState: 0 })
-        }
-
-        const handleMouseLeave = () => {
-            animate(element as Element, { skewY: 0, scale: 1, animationPlayState: 1 })
-        }
-
-        if(element) {
-            element.addEventListener('mouseenter', handleMouseEnter);
-            element.addEventListener('mouseleave', handleMouseLeave);
-        }
-    })
-
+export function Language({ name, img }: LanguageParams) {
     return (
-        <div ref={ref} className="language text-center">
-            <Image src={img} alt={name} height={256} width={256}></Image>
-            <h2>{name}</h2>
-            <p>{yrs}</p>
-        </div>
+        <motion.div 
+        className="language text-center"
+        whileHover={{
+            skewY: -5,
+            scale: 0.8,
+            backgroundColor: '#151515'
+        }}
+        >
+            <div className="flex flex-row items-center">
+                <Image src={img} alt={name} height={64} width={64} className="rounded-sm"></Image>
+                <h2 className="ml-5 text-xl">{name}</h2>
+            </div>
+        </motion.div>
     )
 }
