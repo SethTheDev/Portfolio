@@ -40,7 +40,7 @@ export default function LoadingScreen({ hidden, logo }: LoadingParams) {
             setAnim(true)
             const element = ref.current
             if (element) {
-                animate(element, { opacity: 0 }, { duration: 1 })
+                animate(element, { opacity: 0 }, { duration: 0.5 })
                     .finished
                     .then(() => {
                         setDivHidden(true)
@@ -53,14 +53,7 @@ export default function LoadingScreen({ hidden, logo }: LoadingParams) {
 
     return (
         <div ref={ref} className={`loading bg-black fixed size-full ${divHidden ? 'hidden' : ''}`}>
-            <h1 className={`${fonts[index].className} center text-9xl fixed ${logo ? 'hidden' : ''}`}>Loading</h1>
-            <Image
-            src="/img/logo/logo.png"
-            alt="Seth"
-            width={500}
-            height={500}
-            className={`fixed center ${logo ? '' : 'hidden'}`}
-            ></Image>
+            <h1 className={`loading-text ${fonts[index].className} center text-9xl fixed`}>Loading</h1>
         </div>
     )
 }

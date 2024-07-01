@@ -68,7 +68,7 @@ export default function Home() {
               <Review name="Mopi" avatar="https://avatars.githubusercontent.com/u/95306417?v=4" description="Talented developer and very very good friend :3" />
               <Review name="Refactoring" avatar="https://avatars.githubusercontent.com/u/143757135?v=4" description="One of my best developers. Major vouch" />
               <Review name="BigC" avatar="https://cdn.discordapp.com/avatars/1026351894580445208/b712a79cb334c7dcff500ee0c732977f" description="Seth is a great coder who has been helping me make a mod for minecraft with Python script. (and he is my pookie bear forever)" />
-              <Review name="Spectra" avatar="https://cdn.discordapp.com/avatars/1179720806784323584/a_18124be850c272740385f8b0a8e49ee0.gif" description="very smart and sexy" />
+              <Review name="Spectra" avatar="https://cdn.discordapp.com/avatars/1179720806784323584/a_18124be850c272740385f8b0a8e49ee0.gif" description="Really good developer" />
               <Review name="Kars" avatar="https://cdn.discordapp.com/avatars/718424168068284516/a_ef7371f116afd2d15116e08561c43c28.gif" description="Very tallented developer, only 50% a femboy, would highly reccomend!" />
               <Review name="Korudo" avatar="https://ssmidge.com/assets/img/render/float/2.webp" description={"made me learn C so we can conversate about esp32s\n\n 10/10 would not learn again"} />
               <Review name="alarmingly good games" avatar="https://cdn.discordapp.com/avatars/350990291995590666/61f4ce8270ef0e43e04b10822e1f1376" description="Cool person, knows his shit" />
