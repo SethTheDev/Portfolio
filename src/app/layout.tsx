@@ -5,6 +5,7 @@ import "./globals.css";
 const poppins = Poppins({ weight: "300",  subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  title: 'Home | SethPython',
   openGraph: {
     title: 'SethPython',
     description: 'Your average fullstack developer',
