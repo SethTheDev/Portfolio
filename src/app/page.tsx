@@ -36,6 +36,14 @@ export default function Home() {
     ["HTML/CSS", "/img/lang/htmlcss.png"],
   ]
 
+  const frameworks = [
+    ["React", "/img/framework/react.png"],
+    ["NextJS", "/img/framework/nextjs.png"],
+    ["Discord.JS", "/img/framework/discordjs.png"],
+    ["PaperMC", "/img/framework/papermc.png"],
+    ["Fabric", "/img/framework/fabric.png"]
+  ]
+
   return (
     <main>
       <LoadingScreen hidden={!loading} logo={logo}></LoadingScreen>
@@ -53,6 +61,8 @@ export default function Home() {
           </div>
           <Marquee
           speed={150}
+          pauseOnHover={true}
+          className="mt-8"
           >
             {
               languages.map(lang => 
@@ -60,9 +70,20 @@ export default function Home() {
               )
             }
           </Marquee>
+          <Marquee
+          speed={150}
+          pauseOnHover={true}
+          direction="right"
+          >
+            {
+              frameworks.map(framework => 
+                <Language key={framework[0].toLowerCase()} name={framework[0]} img={framework[1]}></Language>
+              )
+            }
+          </Marquee>
         </div>
         <div className="reviews pt-20 cursor-default">
-          <h1 className="text-4xl text-center">Unsure? Here&apos;s a few vouches!</h1>
+          <h1 className="text-5xl text-center">Unsure? Here&apos;s a few vouches!</h1>
           <div className="reviews-container justify-center flex flex-row flex-wrap gap-12">
               <Review name="Nitlix" avatar="https://avatars.githubusercontent.com/u/66027553?v=4" description="i love python because he helped me calculate areas of circles" />
               <Review name="Mopi" avatar="https://avatars.githubusercontent.com/u/95306417?v=4" description="Talented developer and very very good friend :3" />

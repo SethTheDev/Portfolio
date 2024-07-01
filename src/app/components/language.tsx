@@ -14,7 +14,7 @@ export function Language({ name, img }: LanguageParams) {
         className="language text-center"
         whileHover={{
             skewY: -5,
-            scale: 0.8,
+            scale: 1,
             backgroundColor: '#151515'
         }}
         >
