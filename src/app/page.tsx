@@ -21,12 +21,9 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      setLogo(true)
-      setTimeout(() => {
-        setLoading(false)
-      }, 2000)
-    }, 3000)
-  })
+      setLoading(false)
+    }, 2000)
+  }, [])
 
   const languages = [
     ["Java", "/img/lang/java.png"],
