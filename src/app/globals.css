@@ -46,6 +46,11 @@ i.skibidi {
   background-color: #141414;
 }
 
+.music {
+  width: 16rem;
+  height: 20rem;
+}
+
 .language {
   background-color: #111111;
   border-radius: 15px;
