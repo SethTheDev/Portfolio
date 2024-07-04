@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { useEffect, useState } from "react"
+import "material-symbols"
 
 const songs = [
     // Song - Artist - Album Cover - Color
@@ -67,7 +68,7 @@ export function Music() {
 
                 </motion.div>
             </div>
-            <h1 className="text-lg text-center bg-gray-800 px-2 rounded-xl mt-1 cursor-pointer">⏮ | ⏵ | ⏭</h1>
+            <h1 className="text-lg text-center bg-gray-800 px-2 rounded-xl mt-1 cursor-pointer"><span className="material-symbols-rounded">fast_rewind</span> | <span className="material-symbols-rounded">pause</span> | <span className="material-symbols-rounded">fast_forward</span></h1>
 
             <div className="cursor-default">
                 <h1 className="text-2xl text-center">{song[0]}</h1>
