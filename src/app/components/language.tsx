@@ -13,9 +13,7 @@ export function Language({ name, img }: LanguageParams) {
         <motion.div 
         className="language text-center"
         whileHover={{
-            skewY: -5,
-            scale: 1,
-            backgroundColor: '#151515'
+            backgroundColor: '#171717'
         }}
         >
             <div className="flex flex-row items-center">

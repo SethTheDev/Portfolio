@@ -62,7 +62,6 @@ export default function Home() {
           </div>
           <Marquee
           speed={150}
-          pauseOnHover={true}
           className="mt-8"
           >
             {
@@ -73,7 +72,6 @@ export default function Home() {
           </Marquee>
           <Marquee
           speed={150}
-          pauseOnHover={true}
           direction="right"
           >
             {
