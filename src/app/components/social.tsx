@@ -17,7 +17,7 @@ export function Social({ platform, username, url } : SocialParams) {
 
     return (
         <motion.div
-        className="social flex flex-row pl-8"
+        className="social flex flex-row pl-8 cursor-pointer"
         onClick={onClick}
         whileHover={{
             scale: 1.2,
