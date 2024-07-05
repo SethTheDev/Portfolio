@@ -7,7 +7,8 @@ import { motion, useAnimation } from "framer-motion"
 interface ReviewParams {
     avatar: string,
     name: string,
-    description: string
+    description: string,
+    socials?: string[][]
 }
 
 const variants = {
@@ -15,7 +16,7 @@ const variants = {
     hidden: { opacity: 0 }
 }
 
-export function Review({ avatar, name, description }: ReviewParams) {
+export function Review({ avatar, name, description, socials }: ReviewParams) {
     const control = useAnimation()
     const [ref, inView] = useInView()
 
@@ -50,6 +51,21 @@ export function Review({ avatar, name, description }: ReviewParams) {
                     </React.Fragment>
                 ))}
             </p>
+            <div className="flex flex-row flex-wrap gap-4 mt-2">  
+                {socials ? socials.map((social) => (
+                    <motion.div
+                    className="w-16 h-10 rounded-xl border-violet-600 border-2 text-violet-600 flex items-center justify-center"
+                    whileHover={{
+                        backgroundColor: '#7C3AED',
+                        color: '#fff'
+                    }}
+                    key={social[0]}
+                    onClick={() => window.open(social[1])}
+                    >
+                        {social[0]}
+                    </motion.div>
+                )) : ""}
+            </div>
         </motion.div>
     )
 }
