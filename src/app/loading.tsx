@@ -20,15 +20,8 @@ const merriweather = Merriweather_Sans({ weight: "600", subsets: ["latin"] })
 
 const fonts = [poppins, oswald, fira, roboto, dancing, playfair, bebas, libre, outfit, lobster, shadows, merriweather]
 
-interface LoadingParams {
-    hidden: boolean,
-    logo: boolean
-}
-
-export default function LoadingScreen({ hidden, logo }: LoadingParams) {
+export default function LoadingScreen() {
     const [index, setIndex] = useState(0)
-    const [anim, setAnim] = useState(false)
-    const [divHidden, setDivHidden] = useState(false)
     const ref = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -36,23 +29,11 @@ export default function LoadingScreen({ hidden, logo }: LoadingParams) {
             setIndex((prevIndex) => (prevIndex + 1) % fonts.length);
         }, 125);
 
-        if (hidden && !anim) {
-            setAnim(true)
-            const element = ref.current
-            if (element) {
-                animate(element, { opacity: 0 }, { duration: 0.5 })
-                    .finished
-                    .then(() => {
-                        setDivHidden(true)
-                    })
-            }
-        }
-
         return () => clearInterval(interval)
     })
 
     return (
-        <div ref={ref} className={`loading bg-black fixed size-full ${divHidden ? 'hidden' : ''}`}>
+        <div ref={ref} className={`loading bg-black fixed size-full`}>
             <h1 className={`loading-text ${fonts[index].className} center text-9xl fixed`}>Loading</h1>
         </div>
     )
