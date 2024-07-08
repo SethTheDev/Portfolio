@@ -1,14 +1,14 @@
 "use client"
 
-import { Info } from "./components/info";
-import { Language } from "./components/language";
-import { Terminal } from "./components/terminal";
-import { Review } from "./components/review";
-import { Heart } from "./components/heart";
-import { Social } from "./components/social"
+import { Info } from "../components/info";
+import { Language } from "../components/language";
+import { Terminal } from "../components/terminal";
+import { Review } from "../components/review";
+import { Heart } from "../components/heart";
+import { Social } from "../components/social"
 import Image from "next/image"
 import Marquee from "react-fast-marquee"
-import { Music } from "./components/music";
+import { Music } from "../components/music";
 import React from "react";
 import { Dancing_Script } from "next/font/google";
 
