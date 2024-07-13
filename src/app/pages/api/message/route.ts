@@ -7,12 +7,6 @@ type ResponseData = {
     success: boolean,
 }
 
-export const config = {
-    api: {
-        responseLimit: '1kb'
-    }
-}
-
 export default function handler(
     req: NextApiRequest,
     res: NextApiResponse<ResponseData>
