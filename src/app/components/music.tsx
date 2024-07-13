@@ -51,13 +51,14 @@ export function Music() {
             backgroundColor: song[3]
         }}
         >
-            <img
+            <Image
             src={song[2]}
             width={172}
             height={172}
             alt={song[0]}
+            priority
             className="rounded-3xl mt-5"
-            ></img>
+            />
 
             <div className="w-2/3 h-2 bg-gray-400 rounded mt-2">
                 <motion.div

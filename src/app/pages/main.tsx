@@ -12,7 +12,7 @@ import { Music } from "../components/music";
 import React from "react";
 import { Dancing_Script } from "next/font/google";
 
-const dancingscript = Dancing_Script({ weight: "700", subsets: ["latin"] })
+const dancingscript = Dancing_Script({ weight: "700", subsets: ["latin"], preload: true })
 
 export default function Main() {
     const languages = [

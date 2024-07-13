@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ly-nld/dishook": "^1.0.8",
     "framer-motion": "^11.2.11",
     "material-symbols": "^0.21.0",
     "motion": "^10.18.0",
