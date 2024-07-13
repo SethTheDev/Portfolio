@@ -1,10 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
+interface RequestParams {
+    name: string,
+    message: string
+}
+
 export async function POST(
     req: NextRequest
 ) {
     try {
-        const { name, message } = await req.json()
+        const { name, message }: RequestParams = await req.json()
         console.log(`${name} : ${message}`)
 
         await fetch(
@@ -16,7 +21,7 @@ export async function POST(
                 },
                 body: JSON.stringify({
                     username: name,
-                    content: `**Message from \`${name}\`:** \`${message}\``
+                    content: `**Message from \`${name}\`:** \`${message.replaceAll('\\', '')}\``
                 })
             }
         )
