@@ -5,6 +5,7 @@ export async function POST(
 ) {
     try {
         const { name, message } = await req.json()
+        console.log(`${name} : ${message}`)
 
         await fetch(
             process.env.WEBHOOK_URL as string,
@@ -24,7 +25,7 @@ export async function POST(
             success: true
         })
     } catch(e) {
-        console.error(e)
+        console.error(`${process.env.WEBHOOK_URL as string} \n${e}`)
         return NextResponse.json({
             success: false
         }, { status: 400 })
