@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "discord.js": "^14.15.3",
     "framer-motion": "^11.2.11",
     "material-symbols": "^0.21.0",
     "motion": "^10.18.0",
