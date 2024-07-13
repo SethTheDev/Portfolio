@@ -26,6 +26,6 @@ export async function POST(
     } catch(e) {    
         return NextResponse.json({
             success: false
-        })
+        }, { status: 400 })
     }
 }
