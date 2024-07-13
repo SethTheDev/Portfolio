@@ -59,6 +59,13 @@ i.skibidi {
   color: transparent;
 }
 
+button {
+  background: linear-gradient(135deg, rgba(234,0,112,1) 25%, rgba(167,74,154,1) 50%, rgba(0,57,175,1) 75%);
+  padding: 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
 .terminal {
   background-color: #141414;
 }

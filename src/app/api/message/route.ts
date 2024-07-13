@@ -16,7 +16,7 @@ export async function POST(
                 },
                 body: JSON.stringify({
                     username: name,
-                    content: `**New Message from Website:** ${message}`
+                    content: `**Message from \`${name}\`:** \`${message}\``
                 })
             }
         )

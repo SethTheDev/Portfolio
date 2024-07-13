@@ -11,6 +11,7 @@ import Marquee from "react-fast-marquee"
 import { Music } from "../components/music";
 import React from "react";
 import { Dancing_Script } from "next/font/google";
+import { Message } from "../components/message";
 
 const dancingscript = Dancing_Script({ weight: "700", subsets: ["latin"], preload: true })
 
@@ -109,6 +110,10 @@ export default function Main() {
               <Social platform="Github" username="SethTheDev" url="https://github.com/SethTheDev"></Social>
               <Social platform="Discord" username="the_python" url="https://discord.com/users/866510980225040466"></Social>
             </div>
+          </div>
+          <div className="message flex flex-col gap-10 items-center my-40">
+            <h1 className="text-4xl text-center cursor-default">Or just drop me a message...</h1>
+            <Message />
           </div>
           <div className="text-center my-10">
             <h6 className="text-xs">Made with <Heart/>  by ThePython</h6>
