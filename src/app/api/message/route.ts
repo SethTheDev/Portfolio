@@ -1,14 +1,16 @@
-import { Webhook } from "@ly-nld/dishook";
 import { NextRequest, NextResponse } from "next/server";
-
-const hook = new Webhook(process.env.WEBHOOK_URL as string)
+import { WebhookClient } from "discord.js";
 
 export async function POST(
     req: NextRequest
 ) {
     try {
         const { name, message } = await req.json()
-        await hook.setUsername(name).setContent(`Hey <@866510980225040466>, ${name} says ${message}`).send()
+        const url = process.env.WEBHOOK_URL as string
+        const client = new WebhookClient({ url: url })
+
+        await client.send({ username: name, content: message })
+        
         return NextResponse.json({
             success: true
         })
