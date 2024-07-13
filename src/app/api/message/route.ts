@@ -21,7 +21,7 @@ export async function POST(
                 },
                 body: JSON.stringify({
                     username: name,
-                    content: `**Message from \`${name}\`:** \`${message.replaceAll('\\', '')}\``
+                    content: `**Message from \`${name}\`:** \`${message.replaceAll('\\', '').replaceAll('`', '')}\``
                 })
             }
         )
