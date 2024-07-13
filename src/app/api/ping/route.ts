@@ -1,16 +1,9 @@
-import type { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
-
-type ResponseData = {
-    message: string,
-}
+import { NextResponse, NextRequest } from "next/server";
 
 export async function GET(
-    req: NextApiRequest
-) {
-    if (req.method === 'GET') {    
-        return NextResponse.json({
-            message: "testing owo rawr"
-        })
-    }
+    req: NextRequest
+) {   
+    return NextResponse.json({
+        message: "testing owo rawr"
+    })
 }
