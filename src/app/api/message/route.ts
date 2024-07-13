@@ -8,7 +8,7 @@ export async function POST(
 ) {
     try {
         const { name, message } = await req.json()
-        hook.setUsername(name).setContent(`Hey <@866510980225040466>, ${name} says ${message}`).send()
+        await hook.setUsername(name).setContent(`Hey <@866510980225040466>, ${name} says ${message}`).send()
         return NextResponse.json({
             success: true
         })
