@@ -88,7 +88,9 @@ export default function Main() {
                 <Review name="Kars" avatar="https://cdn.discordapp.com/avatars/718424168068284516/a_ef7371f116afd2d15116e08561c43c28.gif" description="Very tallented developer, would highly reccomend!" 
                 socials={[["Github", "https://github.com/Kars1996"]]}
                 />
-                <Review name="Korudo" avatar="https://ssmidge.com/assets/img/render/float/2.webp" description={"made me learn C so we can conversate about esp32s\n\n 10/10 would not learn again"} />
+                <Review name="Korudo" avatar="https://ssmidge.com/assets/img/render/float/2.webp" description={"made me learn C so we can conversate about esp32s\n\n 10/10 would not learn again"} 
+                socials={[["Github", "https://github.com/Ssmidge"], ["Web", "https://ssmidge.xyz/"]]}
+                />
                 <Review name="alarmingly good games" avatar="https://cdn.discordapp.com/avatars/350990291995590666/61f4ce8270ef0e43e04b10822e1f1376" description="Cool person, knows his shit" />
             </div>
           </div>
