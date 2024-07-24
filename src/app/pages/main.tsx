@@ -76,7 +76,6 @@ export default function Main() {
                 socials={[["Github", "https://github.com/Nitlix"], ["Web", "https://nitlix.pro"]]}
                 />
                 <Review name="Mopi" avatar="https://avatars.githubusercontent.com/u/95306417?v=4" description="Talented developer and very very good friend :3" 
-                socials={[["Github", "https://github.com/MopigamesYT"], ["Web", "https://estrogen.monster"]]}
                 />
                 <Review name="Refactoring" avatar="https://avatars.githubusercontent.com/u/143757135?v=4" description="One of my best developers. Major vouch" 
                 socials={[["Github", "https://github.com/refactorinqq"]]}
