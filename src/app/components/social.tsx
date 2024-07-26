@@ -30,6 +30,7 @@ export function Social({ platform, username, url } : SocialParams) {
             alt={username}
             width={64}
             height={64}
+            priority={true}
             ></Image>
             <h1 className={`text-3xl pl-5 pt-4 ${title.className}`}>{username}</h1>
         </motion.div>

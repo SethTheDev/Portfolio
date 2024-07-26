@@ -91,6 +91,12 @@ export default function Main() {
                 socials={[["Github", "https://github.com/Ssmidge"], ["Web", "https://ssmidge.xyz/"]]}
                 />
                 <Review name="alarmingly good games" avatar="https://cdn.discordapp.com/avatars/350990291995590666/61f4ce8270ef0e43e04b10822e1f1376" description="Cool person, knows his shit" />
+                <Review name="zsld" avatar="https://i.imgur.com/oiAitum.jpeg" description="i worked with python on minecraft clients, hes a insanely good developer. very cool guy" 
+                socials={[["Instagram", "https://instagram.com/zslddd/"], ["Github", "https://github.com/zslddd"]]}
+                />
+                <Review name="Nyami" avatar="https://cdn.discordapp.com/avatars/865731297154170911/cb926f89b9a25931f7aa613f0d1530d9.webp?size=4096" description="I love python because he is a programming language :3"
+                socials={[["Github", "https://github.com/CuteNyami"]]}
+                />
             </div>
           </div>
           
