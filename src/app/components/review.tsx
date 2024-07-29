@@ -3,6 +3,7 @@
 import React, { useEffect } from "react"
 import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
+import Image from "next/image"
 
 interface ReviewParams {
     avatar: string,
@@ -56,18 +57,23 @@ export function Review({ avatar, name, description, socials }: ReviewParams) {
                     <a href='https://estrogen.monster/'><img alt='mopi!' src='https://estrogen.monster/assets/mopi.jpg' /></a>
                 ) : ""
             }
-            <div className="flex flex-row flex-wrap gap-4 mt-2">  
+            <div className="flex flex-row flex-wrap items-center gap-4 mt-2">  
                 {socials ? socials.map((social) => (
                     <motion.div
-                    className="w-16 h-10 rounded-xl border-violet-600 border-2 text-violet-600 flex items-center justify-center"
+                    className="w-10 h-10 rounded-xl flex items-center justify-center"
                     whileHover={{
-                        backgroundColor: '#7C3AED',
-                        color: '#fff'
+                        scale: 1.15
                     }}
                     key={social[0]}
                     onClick={() => window.open(social[1])}
                     >
-                        {social[0]}
+                        <Image
+                        src={`/img/socials/${social[0].toLowerCase()}.png`}
+                        width={72}
+                        height={72}
+                        alt={social[0]}
+                        className="rounded-full"
+                        ></Image>
                     </motion.div>
                 )) : ""}
             </div>
