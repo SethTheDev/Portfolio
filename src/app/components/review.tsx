@@ -54,7 +54,7 @@ export function Review({ avatar, name, description, socials }: ReviewParams) {
             </p>
             {
                 name === 'Mopi' ? (
-                    <a href='https://estrogen.monster/'><img alt='mopi!' src='https://estrogen.monster/assets/mopi.jpg' /></a>
+                    <div><br /><a href='https://estrogen.monster/'><img alt='mopi!' src='https://estrogen.monster/assets/mopi.jpg' /></a></div>
                 ) : ""
             }
             <div className="flex flex-row flex-wrap items-center gap-4 mt-2">  

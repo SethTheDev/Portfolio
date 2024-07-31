@@ -51,6 +51,7 @@ export default function Main() {
             <Marquee
             speed={150}
             className="mt-8"
+            autoFill={true}
             >
               {
                 languages.map(lang => 
@@ -60,6 +61,7 @@ export default function Main() {
             </Marquee>
             <Marquee
             speed={150}
+            autoFill={true}
             direction="right"
             >
               {
