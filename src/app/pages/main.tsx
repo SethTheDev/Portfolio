@@ -99,6 +99,9 @@ export default function Main() {
                 <Review name="Nyami" avatar="https://cdn.discordapp.com/avatars/865731297154170911/cb926f89b9a25931f7aa613f0d1530d9.webp?size=4096" description="I love python because he is a programming language :3"
                 socials={[["Github", "https://github.com/CuteNyami"]]}
                 />
+                <Review name="Foreverably" avatar="https://cdn.discordapp.com/avatars/302868099743612939/e8aab4ddcdb26e804e1d8f8b1f24ec86.png?size=4096" description="cool dev"
+                socials={[["Web", "https://foreverably.ysit.ee"]]}
+                />
             </div>
           </div>
           

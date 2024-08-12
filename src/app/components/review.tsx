@@ -55,6 +55,9 @@ export function Review({ avatar, name, description, socials }: ReviewParams) {
             {
                 name === 'Mopi' ? (
                     <div><br /><a href='https://estrogen.monster/'><img alt='mopi!' src='https://estrogen.monster/assets/mopi.jpg' /></a></div>
+                ) :
+                name === 'Foreverably' ? (
+                    <img src="https://cdn.discordapp.com/emojis/1268181274854686720.gif?size=128&quality=lossless" />
                 ) : ""
             }
             <div className="flex flex-row flex-wrap items-center gap-4 mt-2">  
