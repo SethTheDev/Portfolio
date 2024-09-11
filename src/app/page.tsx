@@ -4,7 +4,7 @@ import React, { useState, useEffect, lazy } from "react";
 import LoadingScreen from "./loading";
 
 const Home = lazy(
-  () => import('./pages/main')
+  () => import('./main')
 )
 
 export default function Page() {

@@ -7,12 +7,11 @@ import "material-symbols"
 
 const songs = [
     // Song - Artist - Album Cover - Color
-    ['あの夢をなぞって', 'YOASOBI', 'https://i.scdn.co/image/ab67616d00001e02684d81c9356531f2a456b1c1', '#F87C7E'],
-    ['Miku', 'Anamanaguchi ft. Hatsune Miku', 'https://i.scdn.co/image/ab67616d00001e02154c3562dc92bcd302c72c9c', '#54C5F7'],
     ['アイドル', 'YOASOBI', 'https://i.scdn.co/image/ab67616d00001e02b7d6ca50bf766ad72226290c', '#B4316F'],
+    ['メズマライザー', '32ki ft. Hatsune Miku', 'https://i.scdn.co/image/ab67616d00001e0221333eb66e3cf9f3818e789f', '#C5133A'],
+    ['ラビットホール', 'DECO*27', 'https://i.scdn.co/image/ab67616d00001e02183b7a8494d8947e07343ad2', '#B93BC0'],
     ['Godzilla', 'Eminem ft. Juice WRLD', 'https://i.scdn.co/image/ab67616d00001e022f44aec83b20e40f3baef73c', '#A60D23'],
     ['夜に駆ける', 'YOASOBI', 'https://i.scdn.co/image/ab67616d00001e02c5716278abba6a103ad13aa7', '#F25872'],
-    ['Aria Math', 'C418', 'https://i.scdn.co/image/ab67616d00001e024cf0b29eb06a92aa96acae64', '#170902']
 ]
 
 export function Music() {
