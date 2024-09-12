@@ -11,6 +11,7 @@ import Marquee from "react-fast-marquee"
 import { Music } from "./components/music";
 import React from "react";
 import { Dancing_Script } from "next/font/google";
+import { Coffee } from "./components/coffee";
 
 const dancingscript = Dancing_Script({ weight: "700", subsets: ["latin"], preload: true })
 
@@ -115,11 +116,15 @@ export default function Main() {
           </div>
           */}
   
-          <div className="socials">
+          <div className="socials flex flex-col items-center gap-10">
             <h1 className="text-5xl text-center cursor-default">Want to get in touch?</h1>
-            <div className="flex flex-row flex-wrap items-center justify-center mt-20 gap-10">
+            <div className="flex flex-row flex-wrap items-center justify-center gap-10">
               <Social platform="Github" username="SethTheDev" url="https://github.com/SethTheDev"></Social>
               <Social platform="Discord" username="the_python" url="https://discord.com/users/866510980225040466"></Social>
+            </div> 
+            <div className="flex flex-row items-center gap-10">
+              <h1 className="text-xl cursor-default">Hazelnut Latte ☕</h1>
+              <Coffee></Coffee>
             </div>
           </div>
           <div className="text-center my-10">
