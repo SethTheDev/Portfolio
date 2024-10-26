@@ -1,16 +1,16 @@
 "use client"
 
-import React, { useState, useEffect, lazy } from "react";
-import LoadingScreen from "./loading";
-
-const Home = lazy(
-  () => import('./main')
-)
+import { useState } from "react"
 
 export default function Page() {
+  const [color, setColor] = useState('#F96079')
+
   return (
-    <React.Suspense fallback={<LoadingScreen />}>
-      <Home />
-    </React.Suspense>
+    <div className="flex items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-6xl">Greetings!</h1>
+        <h1 className="text-4xl">I&apos;m <i className={`text-[${color}]`}>Seth</i></h1>
+      </div>
+    </div>
   )
 }
