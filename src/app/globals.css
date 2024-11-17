@@ -3,111 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
+  --foreground: #ffffff;
+  --background: #101010;
+  --primary: #5370b9;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground);
+  background: var(--background);
   overflow-x: hidden;
-}
-
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-i.skibidi {
-  font-style: normal;
-  background: linear-gradient(135deg, rgba(234,0,112,1) 25%, rgba(167,74,154,1) 50%, rgba(0,57,175,1) 75%);
-  background-clip: text;
-  color: transparent;
-}
-
-button {
-  background: linear-gradient(135deg, rgba(234,0,112,1) 25%, rgba(167,74,154,1) 50%, rgba(0,57,175,1) 75%);
-  padding: 10px;
-  border-radius: 20px;
-  font-weight: 600;
-}
-
-.terminal {
-  background-color: #141414;
-}
-
-.music {
-  width: 16rem;
-  height: 20rem;
-}
-
-.language {
-  background-color: #111111;
-  border-radius: 15px;
-  width: 280px;
-  margin: 20px 10px;
-
-  flex: 0 0 auto;
-  padding: 10px;
-  line-height: 40px;
-  min-width: 100px;
-}
-
-.socials {
-  padding-top: 10%;
-}
-
-.review {
-  background-color: #141414;
-  padding: 20px;
-  border-radius: 20px;
-  min-width: 300px;
-  width: 30%;
-  min-height: 200px;
-  height: max-content;
-}
-
-.reviews-container {
-  margin-top: 100px;
-}
-
-.avatar {
-  border-radius: 50%;
-}
-
-.social {
-  background-color: #141414;
-  min-width: 20rem;
-  border-radius: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.heart {
-  visibility: hidden;
-}
-
-@keyframes conveyor-animation {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-105rem);
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }

@@ -18,7 +18,12 @@ const config: Config = {
       },
       height: {
         '128': '32rem',
-      }
+      },
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        primary: "var(--primary)",
+      },
     },
   },
   plugins: [],
