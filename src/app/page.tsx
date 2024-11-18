@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "./components/button"
 import { Snake } from "./components/snake"
 import { Developer } from "./components/developer"
@@ -13,6 +13,29 @@ const fira = Fira_Code({ weight: "500", subsets: ["latin"] })
 
 export default function Page() {
   const [isHovered, setIsHovered] = useState(false)
+  const [time, setTime] = useState('')
+
+  useEffect(() => {
+    const updateTime = () => {
+      const date = new Date();
+      
+      const options: Intl.DateTimeFormatOptions = {
+        timeZone: 'Asia/Colombo',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+      };
+
+      const formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
+      setTime(formattedTime);
+    };
+    updateTime();
+
+    const intervalId = setInterval(updateTime, 1000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
     <main className="flex flex-col gap-40">
@@ -60,7 +83,6 @@ export default function Page() {
               <h1 className="text-gray-300 text-[8px]">(and that&apos;s just an estimate)</h1>
             </div>
         </div>
-        <h1 className="text-3xl">So what are you waiting for?</h1>
       </div>
       <div className="h-1 bg-gray-800" />
       <div className="flex flex-col items-center justify-center" id="contact">
@@ -69,8 +91,18 @@ export default function Page() {
         </h1>
         <Button label="Let&apos;s talk!" url="mailto:seth@thepython.me" type />
       </div>
-      <div className="flex flex-row items-center justify-center bg-background h-20">
-        <h1 className="">(c) ThePython 2024</h1>
+      <div className="flex flex-row items-center justify-between bg-background h-16">
+        <div className="ml-5 flex flex-row items-center gap-2">
+            <h1>🌐</h1>
+            <div className="flex flex-col text-xs">
+              <h1>Colombo, LK</h1>
+              <h1>{time}</h1>
+            </div>
+        </div>
+        <h1 className="text-s">(c) ThePython 2024</h1>
+        <div className="flex items-center border-primary border-2 p-2 rounded-xl">
+          <a href="https://buymeacoffee.com/sethpython">☕Support Me!</a>
+        </div>
       </div>
     </main>
   )
