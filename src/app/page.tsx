@@ -7,9 +7,12 @@ import { Developer } from "./components/developer"
 import { motion } from "framer-motion"
 import { Inter } from "next/font/google"
 import { Fira_Code } from "next/font/google"
+import { Rowdies } from "next/font/google"
+import { Tool } from "./components/tool"
 
 const inter = Inter({ weight: "900", subsets: ["latin"] })
 const fira = Fira_Code({ weight: "500", subsets: ["latin"] })
+const name = Rowdies({ weight: '700', subsets: ["latin"] })
 
 export default function Page() {
   const [isHovered, setIsHovered] = useState(false)
@@ -40,7 +43,7 @@ export default function Page() {
   return (
     <main className="flex flex-col gap-40">
       <div className="flex flex-col w-full items-center justify-center gap-5">
-        <h1 className="mt-32 text-center text-5xl w-5/6">Hey there! I&apos;m <i className="not-italic text-primary">Python</i></h1>
+        <h1 className="mt-32 text-center text-5xl w-5/6">Hey there! I&apos;m <i className={`not-italic text-primary ${name.className}`}>Python</i></h1>
         <p>A developer at best...</p>
         <div className="flex flex-row gap-5">
           <Button label="Contact Me" url="#contact" type />
@@ -85,9 +88,24 @@ export default function Page() {
         </div>
       </div>
       <div className="h-1 bg-gray-800" />
+      <div className="flex flex-col gap-20 mr-10">
+        <div className="flex flex-col items-end text-right">
+          <h1 className="text-6xl">The <i className={`not-italic text-primary ${inter.className}`}>Jetfuel</i>.</h1>
+          <h1 className="text-xl w-4/5">Let&apos;s bring in the <i className={`not-italic text-primary ${inter.className}`}>BIG</i> guns. Take a look at what I use to shoot for the <i className={`not-italic text-primary ${inter.className}`}>stars</i>! ⭐</h1>
+        </div>
+        <div className="flex flex-row justify-center items-center flex-wrap gap-20 mx-10">
+          <Tool name="Typescript" image="/v2/img/tools/typescript.png" />
+          <Tool name="React" image="/v2/img/tools/react.png" />
+          <Tool name="Java" image="/v2/img/tools/java.png" />
+          <Tool name="Python" image="/v2/img/tools/python.png" />
+          <Tool name="Discord.JS" image="/v2/img/tools/djs.png" />
+          <Tool name="PostgreSQL" image="/v2/img/tools/postgres.png" />
+        </div>
+      </div>
+      <div className="h-1 bg-gray-800" />
       <div className="flex flex-col items-center justify-center" id="contact">
         <h1 className="text-4xl">
-          You know <i className="not-italic text-primary">where</i> to find me
+          You know <i className={`not-italic text-primary ${inter.className}`}>where</i> to find me
         </h1>
         <Button label="Let&apos;s talk!" url="mailto:seth@thepython.me" type />
       </div>
