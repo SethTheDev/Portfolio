@@ -100,7 +100,7 @@ export default function Page() {
             </div>
         </div>
         <h1 className="text-s">(c) ThePython 2024</h1>
-        <div className="flex items-center border-primary border-2 p-2 rounded-xl">
+        <div className="flex items-center border-primary border-2 p-2 rounded-xl mr-5">
           <a href="https://buymeacoffee.com/sethpython">☕Support Me!</a>
         </div>
       </div>
