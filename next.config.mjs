@@ -7,6 +7,12 @@ const nextConfig = {
                 hostname: 'i.scdn.co',
                 port: '',
                 pathname: '/image/**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'color.femboys.rent',
+                port: '',
+                pathname: '/**'
             }
         ]
     }
