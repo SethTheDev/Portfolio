@@ -108,7 +108,7 @@ export default function Page() {
             <h1 className="text-6xl">The <i className={`not-italic text-primary ${inter.className}`}>Jetfuel</i>.</h1>
             <h1 className="text-xl w-4/5">Let&apos;s bring out the <i className={`not-italic text-primary ${inter.className}`}>BIG</i> guns. Take a look at my arsenal!</h1>
           </div>
-          <div className="flex flex-row justify-center items-center flex-wrap gap-20 mx-10">
+          <div className="flex flex-row justify-center items-center flex-wrap gap-5">
             <Tool name="Typescript" image="/v2/img/tools/typescript.png" />
             <Tool name="React" image="/v2/img/tools/react.png" />
             <Tool name="Java" image="/v2/img/tools/java.png" />
@@ -117,12 +117,13 @@ export default function Page() {
             <Tool name="PostgreSQL" image="/v2/img/tools/postgres.png" />
           </div>
         </div>
+        
         <div className="h-1 bg-gray-800" />
         <div className="flex flex-col items-center justify-center" id="contact">
           <h1 className="text-4xl">
             You know <i className={`not-italic text-primary ${inter.className}`}>where</i> to find me
           </h1>
-          <Button label="Let&apos;s talk!" url="mailto:seth@thepython.me" type />
+          <Button label="Let&apos;s talk!" url="mailto:seththedev@proton.me" type />
         </div>
         <div className="flex flex-row items-center justify-between bg-background h-16">
           <div className="ml-5 flex flex-row items-center gap-2">
