@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, lazy } from "react";
 import LoadingScreen from "./loading";
+import "./styles.css";
 
 const Home = lazy(
   () => import('./main')
