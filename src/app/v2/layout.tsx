@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
 import { ReactLenis, useLenis } from "lenis/react"
 
 const poppins = Poppins({ weight: "400",  subsets: ["latin"] });
