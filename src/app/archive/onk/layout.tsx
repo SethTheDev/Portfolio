@@ -1,21 +1,12 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
-import "./globals.css";
+import "./styles.css";
 import { ReactLenis, useLenis } from "lenis/react"
 
 const poppins = Poppins({ weight: "400",  subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Home | Seth',
-  openGraph: {
-    title: 'SethPython',
-    description: 'Your average fullstack developer',
-    images: ['/img/logo/logo_full.png'],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image'
-  }
+  title: 'Home | Seth'
 };
 
 export default function RootLayout({
