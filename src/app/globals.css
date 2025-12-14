@@ -39,3 +39,9 @@ body {
   background-image: url('/img/omori/headspace.png');
   background-repeat: repeat;
 }
+
+.neighbor {
+  background-image: url('/img/omori/neighbor.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
