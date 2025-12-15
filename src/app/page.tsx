@@ -3,8 +3,11 @@
 import { useState, useRef, useEffect } from "react"
 import { Holtwood_One_SC } from "next/font/google"
 import Image from 'next/image'
-import { motion } from "framer-motion"
+import { motion, cancelFrame, frame } from "framer-motion"
 import Typewriter, { TypewriterClass } from "typewriter-effect"
+import ReactLenis, { useLenis } from "lenis/react"
+import type { LenisRef } from "lenis/react"
+import { Avatar } from "./component/avatar"
 
 const holtwood = Holtwood_One_SC({ weight: "400", subsets: ["latin"] })
 
@@ -14,8 +17,12 @@ export default function Page() {
     const [show, setShow] = useState(false)
     const audioRefSave = useRef<HTMLAudioElement | null>(null)
     const audioRefTitle = useRef<HTMLAudioElement | null>(null)
+    const audioRefBuzzer = useRef<HTMLAudioElement | null>(null)
     const typewriterRef = useRef<TypewriterClass | null>(null)
+    const typewriter2Ref = useRef<TypewriterClass | null>(null)
+    const [typedFlight, setTypedFlight] = useState(false)
     const [typeIndex, setTypeIndex] = useState(0)
+    const lenisRef = useRef<LenisRef>(null)
 
     const onClickOpen = () => {
         if (audioRefSave.current) {
@@ -43,18 +50,57 @@ export default function Page() {
         }
     }
 
+    const onClickFlight = () => {
+        audioRefBuzzer.current?.play()
+        if (!typedFlight) {
+            typewriter2Ref.current?.typeString('I choose FIGHT!').start()
+            setTypedFlight(true)
+        } else {
+            typewriter2Ref.current?.changeDeleteSpeed(0.2).deleteAll().typeString('I choose FIGHT!').start()
+        }
+    }
+
+    const onClickFight = () => {
+        if(!typedFlight) {
+            typewriter2Ref.current?.typeString('That\'s what I bring to the table!').start()
+            setTypedFlight(true)
+        } else {
+            typewriter2Ref.current?.changeDeleteSpeed(0.2).deleteAll().typeString('That\'s what I bring to the table!').start()
+        }
+    }
+
+    useEffect(() => {
+        function update(data: { timestamp: number }) {
+            const time = data.timestamp 
+            lenisRef.current?.lenis?.raf(time)
+        }
+
+        frame.update(update, true)
+
+        return () => cancelFrame(update)
+    }, [])
+
     return (
         <>
+            <ReactLenis root
+                options={{
+                    autoRaf: false,
+                }}
+                ref={lenisRef}
+            />
             <audio ref={audioRefSave}>
                 <source src="audio/omori/save.ogg" type="audio/ogg" />
             </audio>
             <audio ref={audioRefTitle}>
                 <source src="audio/omori/title.mp3" type="audio/mpeg" />
             </audio>
+            <audio ref={audioRefBuzzer}>
+                <source src="audio/omori/buzzer.ogg" type="audio/ogg" />
+            </audio>
             {open ? (
                 <>
                 <div className="flex flex-row gap-20 flex-wrap justify-center items-center h-screen neighbor">
-                    <div className="grid border-white border-2 bg-black inline-block h-64 w-[50rem] ml-20" onClick={onClickDesc}>
+                    <div className="grid border-white border-2 bg-black inline-block h-64 w-[50rem] ml-20 cursor-pointer" onClick={onClickDesc}>
                         <div className="font-[omori] ml-2 text-7xl">
                             <Typewriter
                                 onInit={(typewriter) => {
@@ -96,10 +142,55 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col px-20 py-20 gap-20 h-screen">
-                    <div className="flex flex-col w-min border-2 border-white">
-                        <div className="bg-[#cfcfcf] border-2 border-black inline-block">
-                            <h1 className="font-[omori] ml-2 text-8xl text-black font-bold">PROJECTS</h1>
+                <div className="relative w-screen h-screen overflow-hidden">
+                    <div className="absolute inset-0 -z-10 pointer-events-none h-full">
+                        <div className="flex flex-col h-screen items-center justify-center">
+                            <div className="flex flex-row">
+                                <Image alt="java" src={"/img/omori/java.png"} width={150} height={150} />
+                                <Image alt="cpp" src={"/img/omori/cpp.jpg"} width={150} height={150} />
+                            </div>
+                            <div className="flex flex-row">
+                                <Image alt="js" src={"/img/omori/js.jpg"} width={150} height={150} />
+                                <Image alt="py" src={"/img/omori/python.png"} width={150} height={150} />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="relative z-10 flex flex-col h-screen justify-center">
+                        <div className="flex flex-row justify-center px-20 py-10 gap-20">
+                            <Avatar name={"Java"} img={"/img/omori/aubrey.webp"} red={"5 YEARS"} blue={"20+ PROJECTS"} />
+                            <motion.div 
+                            className="flex flex-col w-max border-2 border-black grow h-min"
+                            >
+                                <div className="bg-black border-4 border-white pr-20 pb-4 inline-block font-[omori] text-5xl text-white">
+                                    <Typewriter
+                                        onInit={(typewriter) => {
+                                            typewriter
+                                                .changeDelay(25)
+                                                .typeString('Take a look at my skills...')
+                                                .pasteString('<br />', null)
+                                                .start()
+                                            typewriter2Ref.current = typewriter
+                                        }}
+                                        options={{
+                                            cursor: '_',
+                                            wrapperClassName: 'typewriter'
+                                        }}
+                                    />
+                                </div>
+                            </motion.div>
+                            <Avatar name={"C++"} img={"/img/omori/hero.webp"} red={"4 YEARS"} blue={"5000+ LINES"} />
+                        </div>
+                        <div className="flex flex-row justify-center px-20 py-10 gap-20">
+                            <Avatar name={"Python"} img={"/img/omori/omori.webp"} red={"6 YEARS"} blue={"AI/ML"} />
+                            <div className="grid grid-cols-1 grid-rows-3 align-items-end gap-4 grow self-end">
+                                <motion.div className="flex justify-center border-4 border-white bg-[#cf2342] h-16 w-full cursor-pointer" whileHover={{backgroundColor: '#ff1322'}} onClick={onClickFight}>
+                                    <h1 className="font-[omori] text-6xl text-center text-white font-black"> FIGHT </h1>
+                                </motion.div>
+                                <motion.div className="flex justify-center border-4 border-white bg-[#4223cf] h-16 w-full cursor-pointer" whileHover={{backgroundColor: '#2213ff'}} onClick={onClickFlight}>
+                                    <h1 className="font-[omori] text-6xl text-center text-white font-black"> OR FLIGHT? </h1>
+                                </motion.div>
+                            </div>
+                            <Avatar name={"JS/TS"} img={"/img/omori/kel.webp"} red={"3 YEARS"} blue={"REACT/NEXT/BUN"} />
                         </div>
                     </div>
                 </div>

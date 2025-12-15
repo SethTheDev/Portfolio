@@ -45,3 +45,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.sweetheart {
+  background-image: url('/img/omori/sweetheart.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
