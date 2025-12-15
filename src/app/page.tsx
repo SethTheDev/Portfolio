@@ -18,9 +18,11 @@ export default function Page() {
     const audioRefSave = useRef<HTMLAudioElement | null>(null)
     const audioRefTitle = useRef<HTMLAudioElement | null>(null)
     const audioRefBuzzer = useRef<HTMLAudioElement | null>(null)
+    const audioRefWorldEnd = useRef<HTMLAudioElement | null>(null)
     const typewriterRef = useRef<TypewriterClass | null>(null)
     const typewriter2Ref = useRef<TypewriterClass | null>(null)
     const [typedFlight, setTypedFlight] = useState(false)
+    const [pressedFight, setPressedFight] = useState(false)
     const [typeIndex, setTypeIndex] = useState(0)
     const lenisRef = useRef<LenisRef>(null)
 
@@ -61,6 +63,12 @@ export default function Page() {
     }
 
     const onClickFight = () => {
+        if (!pressedFight) {
+            audioRefTitle.current?.pause()
+            audioRefWorldEnd.current?.play()
+            setPressedFight(true)
+        }
+
         if(!typedFlight) {
             typewriter2Ref.current?.typeString('That\'s what I bring to the table!').start()
             setTypedFlight(true)
@@ -96,6 +104,9 @@ export default function Page() {
             </audio>
             <audio ref={audioRefBuzzer}>
                 <source src="audio/omori/buzzer.ogg" type="audio/ogg" />
+            </audio>
+            <audio ref={audioRefWorldEnd}>
+                <source src="audio/omori/worldend.mp3" type="audio/mpeg" />
             </audio>
             {open ? (
                 <>
@@ -183,15 +194,29 @@ export default function Page() {
                         <div className="flex flex-row justify-center px-20 py-10 gap-20">
                             <Avatar name={"Python"} img={"/img/omori/omori.webp"} red={"6 YEARS"} blue={"AI/ML"} />
                             <div className="grid grid-cols-1 grid-rows-3 align-items-end gap-4 grow self-end">
-                                <motion.div className="flex justify-center border-4 border-white bg-[#cf2342] h-16 w-full cursor-pointer" whileHover={{backgroundColor: '#ff1322'}} onClick={onClickFight}>
+                                <motion.div className="flex items-center justify-center border-4 border-white bg-[#cf2342] h-16 w-full cursor-pointer" whileHover={{backgroundColor: '#ff1322'}} onClick={onClickFight}>
+                                    <div className="grow" />
                                     <h1 className="font-[omori] text-6xl text-center text-white font-black"> FIGHT </h1>
+                                    <div className="grow" />
+                                    <Image className="h-min" src={'/img/omori/cursor.gif'} alt="cursor" width={160} height={40} />
                                 </motion.div>
-                                <motion.div className="flex justify-center border-4 border-white bg-[#4223cf] h-16 w-full cursor-pointer" whileHover={{backgroundColor: '#2213ff'}} onClick={onClickFlight}>
+                                <motion.div className="flex items-center justify-center border-4 border-white bg-[#4223cf] h-16 w-full cursor-pointer" whileHover={{backgroundColor: '#2213ff'}} onClick={onClickFlight}>
+                                    <div className="grow" />
                                     <h1 className="font-[omori] text-6xl text-center text-white font-black"> OR FLIGHT? </h1>
+                                    <div className="grow" />
+                                    <Image className="" src={'/img/omori/cursor.gif'} alt="cursor" width={160} height={40} />
                                 </motion.div>
                             </div>
                             <Avatar name={"JS/TS"} img={"/img/omori/kel.webp"} red={"3 YEARS"} blue={"REACT/NEXT/BUN"} />
                         </div>
+                    </div>
+                </div>
+                <div className="relative overflow-hidden h-screen w-screen">
+                    <div className="fixed inset-0 -z-10 pointer-events-none h-full">
+                        
+                    </div>
+                    <div className="relative z-10 flex flex-col h-screen">
+
                     </div>
                 </div>
                 </>
