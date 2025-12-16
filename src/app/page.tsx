@@ -8,6 +8,7 @@ import Typewriter, { TypewriterClass } from "typewriter-effect"
 import ReactLenis, { useLenis } from "lenis/react"
 import type { LenisRef } from "lenis/react"
 import { Avatar } from "./component/avatar"
+import { Review } from "./component/review"
 
 const holtwood = Holtwood_One_SC({ weight: "400", subsets: ["latin"] })
 
@@ -25,6 +26,22 @@ export default function Page() {
     const [pressedFight, setPressedFight] = useState(false)
     const [typeIndex, setTypeIndex] = useState(0)
     const lenisRef = useRef<LenisRef>(null)
+    const [hoverIndex, setHoverIndex] = useState(0)
+
+    const [mopi, setMopi] = useState('')
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await fetch("https://api.vaultcord.com/webhooks/public-lookup/1022189106614243350");
+                const data = await res.json();
+                setMopi(`https://cdn.discordapp.com/avatars/1022189106614243350/${data.avatar}`)
+            } catch (err) {
+                console.error(err)
+            }
+        }
+
+        fetchData()
+    }, [])
 
     const onClickOpen = () => {
         if (audioRefSave.current) {
@@ -47,6 +64,10 @@ export default function Page() {
                 break 
             case 1:
                 typewriterRef.current?.typeString('Welcome to my headspace!').start()
+                setTypeIndex(typeIndex + 1)
+                break
+            case 2:
+                typewriterRef.current?.changeDeleteSpeed(0.2).deleteChars(24).typeString('Okay now scroll down!').start()
                 setTypeIndex(typeIndex + 1)
                 break
         }
@@ -110,6 +131,24 @@ export default function Page() {
             </audio>
             {open ? (
                 <>
+                <div className="fixed z-20 w-full flex justify-center">
+                    <div className="w-1/2 border-2 border-black">
+                        <div className="flex flex-row px-20 justify-between border-4 border-white bg-black">
+                            <motion.div className="flex flex-row items-center" onHoverStart={() => setHoverIndex(1)} onHoverEnd={() => setHoverIndex(0)}>
+                                <a href={"#"} className="font-[omori] text-4xl">HOME</a>
+                                <Image className="h-min" alt="cursor" style={{ opacity: hoverIndex == 1 ? 1 : 0 }} src="/img/omori/cursor.gif" width={80} height={20} />
+                            </motion.div>
+                            <motion.div className="flex flex-row items-center" onHoverStart={() => setHoverIndex(2)} onHoverEnd={() => setHoverIndex(0)}>
+                                <a href={"#skills"} className="font-[omori] text-4xl">SKILLS</a>
+                                <Image className="h-min" alt="cursor" style={{ opacity: hoverIndex == 2 ? 1 : 0 }} src="/img/omori/cursor.gif" width={80} height={20} />
+                            </motion.div>
+                            <motion.div className="flex flex-row items-center" onHoverStart={() => setHoverIndex(3)} onHoverEnd={() => setHoverIndex(0)}>
+                                <a href={"#review"} className="font-[omori] text-4xl">REVIEWS</a>
+                                <Image className="h-min" alt="cursor" style={{ opacity: hoverIndex == 3 ? 1 : 0 }} src="/img/omori/cursor.gif" width={80} height={20} />
+                            </motion.div>
+                        </div>
+                    </div>
+                </div>
                 <div className="flex flex-row gap-20 flex-wrap justify-center items-center h-screen neighbor">
                     <div className="grid border-white border-2 bg-black inline-block h-64 w-[50rem] ml-20 cursor-pointer" onClick={onClickDesc}>
                         <div className="font-[omori] ml-2 text-7xl">
@@ -153,7 +192,7 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-                <div className="relative w-screen h-screen overflow-hidden">
+                <div id="skills" className="relative w-screen h-screen overflow-hidden">
                     <div className="absolute inset-0 -z-10 pointer-events-none h-full">
                         <div className="flex flex-col h-screen items-center justify-center">
                             <div className="flex flex-row">
@@ -211,12 +250,29 @@ export default function Page() {
                         </div>
                     </div>
                 </div>
-                <div className="relative overflow-hidden h-screen w-screen">
-                    <div className="fixed inset-0 -z-10 pointer-events-none h-full">
-                        
+                <div id="review" className="flex flex-col gap-32 items-center mb-20">
+                    <div className="bg-black border-4 border-white pr-20 pb-4 inline-block">
+                        <h1 className="ml-4 font-[omori] text-5xl text-white">Trusted by Professionals!</h1>
                     </div>
-                    <div className="relative z-10 flex flex-col h-screen">
-
+                    <div className="flex px-2 flex-row gap-0 bg-[#aaaaaa] h-[36rem] w-[70%]">
+                        <div className="paper flex flex-col justify-between bg-white w-full h-full">
+                            <Review name={"Microwave"} img={"https://cdn.discordapp.com/avatars/1037268731568586753/208b89b5633c841a040bfd699135c4a5.png"} message={"Seriously talented, he knows what he's doing and he's passionate about it. I respect that."} reverse={false} />
+                            <Review name={"Maelstrom"} img={"https://cdn.discordapp.com/avatars/162216643370418176/a_592fb15076fb9fd96fc793592455aad2.gif"} message={"A close friend and a modern day tech prodigy"} reverse={true} />
+                        </div>
+                        <div className="bg-black w-[2px] h-full"></div>
+                        <div className="paper flex flex-col justify-between bg-white w-full h-full">
+                            <Review name={"Vinuu"} img={"https://ca.slack-edge.com/E09V59WQY1E-U08R6ME1880-e571617cd659-512"} message={"Seth's a really cool person talk too. A really awesome friend too. Super talented and would def recommend him for any project ❤️!!"} reverse={false} />
+                            <Review name={"Korudo"} img={"https://cdn.discordapp.com/avatars/682984308776239134/f12690adde3c160a806a13fda5e3c5a5.png"} message={"shit man"} reverse={true} />
+                        </div>
+                    </div>
+                    <div className="flex px-2 flex-row gap-0 bg-[#afafaf] h-[36rem] w-[70%]">
+                        <div className="paper flex flex-col justify-between bg-white w-full h-full">
+                            <Review name={"MUD1"} img={"https://cdn.discordapp.com/avatars/982179680318783498/e6ddb2283d4d9e54b4822dbfca6129d8.png"} message={"A versatile programmer with experience across multiple fields"} reverse={false} />
+                            <Review name={"Mopi"} img={mopi} message={"play omori"} reverse={true} />
+                        </div>
+                        <div className="bg-black w-[2px] h-full"></div>
+                        <div className="paper flex flex-col justify-between bg-white w-full h-full">
+                        </div>
                     </div>
                 </div>
                 </>
@@ -231,8 +287,8 @@ export default function Page() {
                     />
                     <div className="select-none grid place-items-center h-screen headspace">
                         <div className="border-2 border-black">
-                            <div className="grid cursor-pointer border-2 bg-black border-white inline-block pl-4 pt-2 w-96 h-20">
-                                <h1 onClick={onClickOpen} className={`select-none text-3xl font-[omori]`}>Click here to enter.</h1>
+                            <div onClick={onClickOpen} className="grid cursor-pointer border-2 bg-black border-white inline-block pl-4 pt-2 w-96 h-20">
+                                <h1 className={`select-none text-3xl font-[omori]`}>Click here to enter.</h1>
                                 <Image className="justify-self-end" src={'/img/omori/cursor.gif'} alt="cursor" width={80} height={20} />
                             </div>
                         </div> 
